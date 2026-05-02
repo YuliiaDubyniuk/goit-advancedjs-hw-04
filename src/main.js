@@ -26,7 +26,7 @@ const perPage = 15;
 const onFormSubmit = async event => {
   try {
     event.preventDefault();
-
+    // hide load more btn till new request gallery shown up 
     hideLoadMoreButton(refs.loadMoreBtn);
 
     const { target: searchForm } = event;
