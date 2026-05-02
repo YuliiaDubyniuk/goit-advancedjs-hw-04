@@ -1,7 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function createGallery(images) {
+export const createGallery = images => {
   return images
     .map(img => {
       return `<li class="gallery-item">
@@ -29,21 +29,29 @@ export function createGallery(images) {
 </li>`;
     })
     .join('');
-}
+};
 
 export const lightBoxGalery = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
-export function clearGallery(gallery) {
+export const clearGallery = gallery => {
   gallery.innerHtml = '';
-}
+};
 
-export function showLoader(loader) {
+export const showLoader = loader => {
   loader.classList.add('is-active');
-}
+};
 
-export function hideLoader(loader) {
+export const hideLoader = loader => {
   loader.classList.remove('is-active');
-}
+};
+
+export const showLoadMoreButton = btn => {
+  btn.classList.remove('is-hidden');
+};
+
+export const hideLoadMoreButton = btn => {
+  btn.classList.add('is-hidden');
+};
