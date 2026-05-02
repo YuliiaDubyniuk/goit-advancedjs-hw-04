@@ -70,7 +70,6 @@ const onFormSubmit = async event => {
     // render gallery using request result data
     refs.galleryList.innerHTML = createGallery(data.hits);
     lightBoxGalery.refresh();
-    scrollGallery();
   } catch (err) {
     console.log(err);
     iziToast.warning({
